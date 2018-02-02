@@ -2,14 +2,22 @@
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
     position: relative;
     width: 200px;
-    height: 350px;
-    border: 2px solid rgb(31, 150, 31);
-    
+    height: 460px;
+    color: #535353;
+    background: rgb(229,229,229); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(178,178,178,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(178,178,178,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(178,178,178,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
+    border-radius: 10px;
 }
 .galeria_categoria a{
     text-decoration: none;
+    color: #6d6d6d;
 }
 .galeria_imagens{
     position: relative;
@@ -24,4 +32,10 @@
 .galeria_page{
     position: relative;
     text-align: center;
+}
+.galeria_mouseover{
+    font-size: 150%;
+}
+.galeria_click{
+    font-size: 200%;
 }

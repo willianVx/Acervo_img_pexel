@@ -1,34 +1,36 @@
 $(document).ready(function(){
     $(".galeria_arte").click(function(){
-        setCategoria("art");
+        setCategoria("art painting colors");
     });
 
     $(".galeria_natureza").click(function(){
-        setCategoria("nature");
+        setCategoria("nature forest");
     });
-
+    $(".galeria_cidades").click(function(){
+        setCategoria("london new york tokyo rio de janeiro paris roma");
+    });
     $(".galeria_esporte").click(function(){
-        setCategoria("sport");
+        setCategoria("ball sport atletic");
     });
 
-    $(".galeria_familia").click(function(){
-        setCategoria("family");
+    $(".galeria_paisagem").click(function(){
+        setCategoria("landscape");
     });
 
     $(".galeria_casa").click(function(){
-        setCategoria("house");
+        setCategoria("design interior house");
     });
 
     $(".galeria_festa").click(function(){
-        setCategoria("party");
+        setCategoria("party music");
     });
 
     $(".galeria_pb").click(function(){
-        setCategoria("black and white");
+        setCategoria("black an white gray");
     });
 
     $(".galeria_praia").click(function(){
-        setCategoria("beach");
+        setCategoria("beach ocean");
     });
 
     $(".galeria_por_do_sol").click(function(){
@@ -41,7 +43,6 @@ $(document).ready(function(){
     function sendData(NovaCategoria){
         // show that something is loading
         $('#response').html("<b>Loading response...</b>");
-        
         $.post('galeria_fotos.php', {
             categoria: JSON.stringify(NovaCategoria)
         },function(data){

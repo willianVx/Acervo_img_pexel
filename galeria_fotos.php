@@ -1,13 +1,9 @@
 <?php
     if (isset($_POST["categoria"])){
         $pesquisa['categoria'] = $_POST['categoria'];
-        $Art = "art";
-        $default = "default";
-
-        if($pesquisa['categoria'] = $Art){
-            galeria_set_fotos($Art);
-        }
+        galeria_set_fotos($pesquisa['categoria']);
     }
+    
     function galeria_set_fotos($pesquisa){
         header('Content-Type: text/html; charset=utf-8');
             require 'vendor/autoload.php';
