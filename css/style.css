@@ -1,0 +1,27 @@
+.galeria_categoria{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    padding-left: 10px;
+    position: relative;
+    width: 200px;
+    height: 350px;
+    border: 2px solid rgb(31, 150, 31);
+    
+}
+.galeria_categoria a{
+    text-decoration: none;
+}
+.galeria_imagens{
+    position: relative;
+}
+.galeria_box_img{
+    position: relative;
+    width: 400px;
+    height: 320px;
+    border: 5px solid #646464;
+    margin: 10px;
+}
+.galeria_page{
+    position: relative;
+    text-align: center;
+}

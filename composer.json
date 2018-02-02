@@ -1,0 +1,14 @@
+{
+    "name": "eas/teste-pexel",
+    "description": "Teste para API do Pexel",
+    "type": "glooby/pexels",
+    "require": {
+        "glooby/pexels": "^0.1.3"
+    },
+    "authors": [
+        {
+            "name": "willian de oliveira",
+            "email": "willian@photoarts.com"
+        }
+    ]
+}
