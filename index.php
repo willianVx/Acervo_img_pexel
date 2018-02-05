@@ -1,3 +1,8 @@
+<?php 
+                    require "galeria_fotos.php";
+                    require "categorias.php";
+                    require "modal_comprar.php";
+ ?>
 <html>
     <head>
     <title>teste Pexel</title>
@@ -11,27 +16,25 @@
     <script src="js/efeitos.js"></script>
     </head>
     <body>
-        <div class="col-lg-12">
-        <h1>Acervo de imagens</h1>
-            <?php 
-                require "galeria_fotos.php";
-                require "categorias.php";
-                require "modal_comprar.php";
-            ?>
-            <div class="col-lg-2">
-                <?php
-                    galeria_categorias();
-                ?>
-            </div>
-            <div class="col-lg-10 galeria_imagens">
-                <div class="response"></div>
-            </div>
-                <div class="col-lg-12 galeria_page">
+
+    <div class="col-lg-12">
+
+            <h1>Acervo de imagens</h1>
+            
+                <div class="col-lg-2">
+                    <?php
+                        galeria_categorias();
+                    ?>
                 </div>
-            <footer>
-                <p>by will</p>
-            </footer>
-        </div>
-       
+
+                <div class="col-lg-10 galeria_imagens">
+                    <div class="response"></div>
+                </div>
+                <footer>
+                    <p>by will</p>
+                </footer>
+            
+    </div>
+
     </body> 
 </html>

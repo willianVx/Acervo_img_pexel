@@ -8,10 +8,7 @@
                     <span class="galeria_arte"><p><a href="#">Arte</a></p></span>
                     <span class="galeria_natureza"><p><a href="#">Natureza</a></p></span>
                     <span class="galeria_cidades"><p><a href="#">Cidades</a></p></span>
-                    <span class="galeria_esporte"><p><a href="#">Esporte</a></p></span>
                     <span class="galeria_paisagem"><p><a href="#">Paisagem</a></p></span>
-                    <span class="galeria_casa"><p><a href="#">Casa</a></p></span>
-                    <span class="galeria_festa"><p><a href="#">Festa</a></p></span>
                     <span class="galeria_pb"><p><a href="#">Preto e Branco</a></p></span>
                     <span class="galeria_praia"><p><a href="#">Praia</a></p></span>
                     <span class="galeria_por_do_sol"><p><a href="#">Por do Sol</a></p></span>
