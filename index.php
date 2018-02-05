@@ -27,8 +27,8 @@
                     ?>
                 </div>
 
-                <div class="col-lg-10 galeria_imagens">
-                    <div class="response"></div>
+                <div class="col-lg-10">
+                    <div class="response galeria_response_img"></div>
                 </div>
                 <footer>
                     <p>by will</p>

@@ -11,8 +11,9 @@
             $response = $pexels->search($pesquisa, 40, 1);
             $data = $response->json();
             foreach ($data['photos'] as $photo) {
+                
                 echo "<div class='galeria_imagens'>";
-                echo "<div class='col-lg-4'> <img src='".$photo['src']['medium']."'></div>";
+                echo "<div class='col-lg-5 galeria_idividual_img'> <img src='".$photo['src']['medium']."'></div>";
                 //echo " Tamanho de ". $photo['width']." por ".$photo['height']." ";
                 echo "</div>";
                 //echo "<p>".$photo['src']['original']."</p>";
