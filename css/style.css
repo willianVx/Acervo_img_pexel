@@ -19,10 +19,11 @@
     text-decoration: none;
     color: #6d6d6d;
 }
-.galeria_idividual_img{
+.galeria_idividual_img img{
     position: relative;
-    padding: 5px;
-    right: -100px;
+    max-width: 500px;
+    max-height: 260px;
+    margin: 5px;
 }
 .galeria_mouseover{
     font-size: 150%;
