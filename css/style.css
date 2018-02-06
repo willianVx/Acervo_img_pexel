@@ -31,3 +31,27 @@
 .galeria_click{
     font-size: 200%;
 }
+.galeria_info_imagem{
+    padding: 2px;
+    text-align: center;
+}
+.galeria_imagem_texto{
+    position: relative;
+    top: -40px;
+    left:15px;
+    color: #e4e4e4;
+    text-decoration: none;
+    width: 100px;
+    height: 25px;
+    padding-left: 10px;
+    padding-top: 2px;
+    border-radius: 10px;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.64) 0%, rgba(0,0,0,0.66) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.64) 0%,rgba(0,0,0,0.66) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.64) 0%,rgba(0,0,0,0.66) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3000000', endColorstr='#a8000000',GradientType=0 ); /* IE6-9 */
+}
+.galeria_imagem_texto a{
+    text-decoration: none;
+    color: green;
+}

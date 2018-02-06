@@ -42,15 +42,16 @@ $(document).ready(function(){
     }
     function sendData(NovaCategoria){
         // show that something is loading
-        $('#response').html("<b>Loading response...</b>");
+        $('.response').html("<b>Carregando...</b>");
         $.post('galeria_fotos.php', {
             categoria: JSON.stringify(NovaCategoria)
         },function(data){
             // show the response
             $('.response').html(data);
+            add_efeito_imagens();
         }).fail(function(){
             // just in case posting your form failed
-            alert( "Posting failed." );
+            alert( "Algo deu errado no carregamento." );
         });
         //to prevent refreshing the whole page page
         return false;

@@ -33,7 +33,6 @@
                 <footer>
                     <p>by will</p>
                 </footer>
-            
     </div>
 
     </body> 
