@@ -18,9 +18,8 @@
 
         private $precoBaseMoldura;
 
-        //true para pedido com moldura e false para pedido sem moldura
-
-        private $Moldura;
+        private $tamanhoX;
+        private $tamanhoY;
 
         public function setPrecoBaseAcabamento($acabamento, $tipoDeMoldura){
             foreach($this -> precoBaseAcabamento as $index => $preco){
@@ -32,16 +31,67 @@
         }
 
         public function setPrecoBaseMoldura($index, $preco, $tipoDeMoldura){
-            if($index == 'meta3mm'){
+
+            if($index == 'papelAlgodao' || $index == 'papelFosco' || $index == 'papelAcetinato' || $index == 'papelBrilhante'){
+                $tipoDeMoldura = 0;
                 $precoBaseMoldura = 0;
-                echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
+            } 
+            if($tipoDeMoldura == 1){
+                
+                if($index == 'meta3mm'){
+                    $precoBaseMoldura = 0;
+                    //echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
+                }
+                if($index == 'meta4mm'){
+                    $precoBaseMoldura = 153;
+                }
+                else{
+                    $precoBaseMoldura = 160;
+                }
+
+            }  
+
+            if($tipoDeMoldura == 2){
+                
+                if($index == 'meta3mm'){
+                    $precoBaseMoldura = 160;
+                    //echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
+                }
+                if($index == 'meta4mm'){
+                    $precoBaseMoldura = 345;
+                }
+                else{
+                    $precoBaseMoldura = 320;
+                }
+
             }
-            if($index == 'meta4mm'){
-                $precoBaseMoldura = 153;
+
+            if($tipoDeMoldura == 3){
+                
+                if($index == 'meta3mm'){
+                    $precoBaseMoldura = 320;
+                    //echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
+                }
+                if($index == 'meta4mm'){
+                    $precoBaseMoldura = 506;
+                }
+                else{
+                    $precoBaseMoldura = 480;
+                }
+
+            }
+            
+        }
+
+        public function setTamanho($tamanhoX, $tamanhoY){
+
+            if($tamanhoX < 10 || $tamanhoX > 100 || $tamanhoY < 10 || $tamanhoY > 200){
+                //echo "tamanho invalido.";
             }
             else{
-                $precoBaseMoldura = 160;
+                //echo "Voce escolheu os tamanhos ".$tamanhoX. " cm por ".$tamanhoY." cm";
             }
+
         }
 
     }

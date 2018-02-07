@@ -21,7 +21,8 @@
 
     <?php
         $teste = new CalculaPreco;
-       echo $teste -> setPrecoBaseAcabamento("meta3mm");
+       echo $teste -> setPrecoBaseAcabamento("papelAlgodao", 1);
+       $teste -> setTamanho(110,9);
     ?>
 
     <div class="col-lg-12">
