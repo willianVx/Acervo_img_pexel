@@ -2,7 +2,6 @@
                     require "galeria_fotos.php";
                     require "categorias.php";
                     require "modal_comprar.php";
-
                     require "calculadoraProdutosInsta/main.php";
  ?>
 <html>
@@ -21,7 +20,7 @@
 
     <?php
         $teste = new CalculaPreco;
-        $teste -> formula_pedido_instaarts('meta3mm', 0, 40, 60);
+        $teste -> formula_pedido_instaarts('meta7mm', 0, 60, 200);
     ?>
 
     <div class="col-lg-12">

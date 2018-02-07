@@ -32,13 +32,15 @@
             if($v){
                 echo "Voce escolheu os tamanhos ". $tamanhoX. " cm por " . $tamanhoY ." com acabamento ".$acabamento." o valor total da sua obra é de: ".$total."";
             }
+            else{
+                echo "Voce escolheu um tamanho invalido";
+            }
     
         }
 
         public function setPrecoBaseAcabamento($acabamento, $tipoDeMoldura){
             foreach($this -> precoBaseAcabamento as $index => $preco){
                 if($acabamento == $index){
-                    //echo "O acabamento é ". $acabamento . " e seu preço base é " . $preco;
                     $precoBaseMoldura = $this -> setPrecoBaseMoldura($acabamento, $preco, $tipoDeMoldura);
                     return $preco + $precoBaseMoldura;
                 }
@@ -58,7 +60,6 @@
                 if($index == 'meta3mm'){
                     $precoBaseMoldura = 0;
                     return $precoBaseMoldura;
-                    //echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
                 }
                 if($index == 'meta4mm'){
                     $precoBaseMoldura = 153;
@@ -76,7 +77,6 @@
                 if($index == 'meta3mm'){
                     $precoBaseMoldura = 160;
                     return $precoBaseMoldura;
-                    //echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
                 }
                 if($index == 'meta4mm'){
                     $precoBaseMoldura = 345;
@@ -94,7 +94,6 @@
                 if($index == 'meta3mm'){
                     $precoBaseMoldura = 320;
                     return $precoBaseMoldura;
-                    //echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
                 }
                 if($index == 'meta4mm'){
                     $precoBaseMoldura = 506;
@@ -110,11 +109,9 @@
         public function validaTamanho($tamanhoX, $tamanhoY){
 
             if($tamanhoX < 10 || $tamanhoX > 100 || $tamanhoY < 10 || $tamanhoY > 200){
-                //echo "tamanho invalido.";
                 return false;
             }
             else{
-                //echo "Voce escolheu os tamanhos ".$tamanhoX. " cm por ".$tamanhoY." cm";
                 return true;
             }
 
