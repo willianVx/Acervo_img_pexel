@@ -21,8 +21,7 @@
 
     <?php
         $teste = new CalculaPreco;
-       echo $teste -> setPrecoBaseAcabamento("papelAlgodao", 1);
-       $teste -> setTamanho(110,9);
+        $teste -> formula_pedido_instaarts('meta3mm', 0, 40, 60);
     ?>
 
     <div class="col-lg-12">
