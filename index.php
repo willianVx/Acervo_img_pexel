@@ -2,6 +2,8 @@
                     require "galeria_fotos.php";
                     require "categorias.php";
                     require "modal_comprar.php";
+
+                    require "calculadoraProdutosInsta/main.php";
  ?>
 <html>
     <head>
@@ -16,6 +18,11 @@
     <script src="js/efeitos.js"></script>
     </head>
     <body>
+
+    <?php
+        $teste = new CalculaPreco;
+       echo $teste -> setPrecoBaseAcabamento("meta3mm");
+    ?>
 
     <div class="col-lg-12">
 

@@ -16,10 +16,33 @@
         'papelCanvas' => 633,
         );
 
-        private $precoBaseMoldura = array(
+        private $precoBaseMoldura;
 
-        );
+        //true para pedido com moldura e false para pedido sem moldura
+
+        private $Moldura;
+
+        public function setPrecoBaseAcabamento($acabamento, $tipoDeMoldura){
+            foreach($this -> precoBaseAcabamento as $index => $preco){
+                if($acabamento == $index){
+                    //echo "O acabamento é ". $acabamento . " e seu preço base é " . $preco;
+                    $this -> setPrecoBaseMoldura($acabamento, $preco, $tipoDeMoldura);
+                }
+            }    
+        }
+
+        public function setPrecoBaseMoldura($index, $preco, $tipoDeMoldura){
+            if($index == 'meta3mm'){
+                $precoBaseMoldura = 0;
+                echo "O acabamento é ". $index . " e seu preço base é " . $preco . "e o preço base da moldura é ". $precoBaseMoldura;
+            }
+            if($index == 'meta4mm'){
+                $precoBaseMoldura = 153;
+            }
+            else{
+                $precoBaseMoldura = 160;
+            }
+        }
 
     }
-    
 ?>
