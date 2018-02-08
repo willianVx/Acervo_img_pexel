@@ -3,6 +3,7 @@
                     require "categorias.php";
                     require "modal_comprar.php";
                     require "calculadoraProdutosInsta/main.php";
+                    require "TamanhosProporcionais/imagemProporcional.php";
  ?>
 <html>
     <head>
@@ -20,11 +21,13 @@
 
     <?php
         $teste = new CalculaPreco;
-        $teste -> formula_pedido_instaarts('meta7mm', 0, 60, 200);
+        $teste -> formula_pedido_instaarts('meta4mm', 0, 90, 50);
+        echo "</br>";
+        $teste2 = new ImagemProporcional;
+        $teste2 -> TamanhosProporcionais(20, 30);
     ?>
 
     <div class="col-lg-12">
-
             <h1>Acervo de imagens</h1>
             
                 <div class="col-lg-2">
