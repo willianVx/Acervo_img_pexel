@@ -20,11 +20,14 @@
     <body>
 
     <?php
-        $teste = new CalculaPreco;
-        $teste -> formula_pedido_instaarts('meta4mm', 0, 90, 50);
-        echo "</br>";
+        
         $teste2 = new ImagemProporcional;
-        $teste2 -> TamanhosProporcionais(3168, 4752);
+        $verde = $teste2 -> TamanhosProporcionais(3000, 2000)[20];
+        echo "</br>";
+        $teste = new CalculaPreco;
+        $teste -> formula_pedido_instaarts('meta5mm', 0, 20, $verde);
+        echo "</br>";
+
     ?>
 
     <div class="col-lg-12">

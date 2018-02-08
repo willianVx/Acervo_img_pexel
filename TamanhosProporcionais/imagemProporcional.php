@@ -1,6 +1,5 @@
 <?php
 
-
     class ImagemProporcional
     {
         private $tamanhoX;
@@ -10,7 +9,7 @@
 
         private $tamanhosPadrao = array(20, 30, 40, 50, 60, 70, 80, 90);
 
-        private $resultado = array();
+        private $tamanhosProporcionais = array();
 
         public function TamanhosProporcionais($x, $y){
 
@@ -18,7 +17,9 @@
             $this -> tamanhoY = $y;
 
             $r = $this -> setRazao($this -> tamanhoX, $this -> tamanhoY);
-            $this -> setTamanhoProporcional($r);
+            $r_tamanhos = array_combine($this -> tamanhosPadrao, $this -> setTamanhoProporcional($r)); 
+
+            return $r_tamanhos;
         }
 
         public function setRazao($x, $y){
@@ -60,10 +61,10 @@
                 if($tproporcional < 10){
                     $tproporcional = $this -> tamanhosPadrao[$cont] * $r;
                 }
-                
-                    return $this -> tamanhosPadrao[$cont] . $tproporcional ."</br>";
-                    $cont++; 
+                    array_push($this -> tamanhosProporcionais, $tproporcional);
+                    $cont++;
             }
+            return $this -> tamanhosProporcionais;
         }
     }
 ?>
