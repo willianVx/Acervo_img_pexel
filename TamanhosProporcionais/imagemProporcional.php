@@ -15,10 +15,9 @@
 
             $this -> tamanhoX = $x;
             $this -> tamanhoY = $y;
-
             $r = $this -> setRazao($this -> tamanhoX, $this -> tamanhoY);
-            $r_tamanhos = array_combine($this -> tamanhosPadrao, $this -> setTamanhoProporcional($r)); 
-
+            //$r_tamanhos = array_combine($this -> tamanhosPadrao, $this -> setTamanhoProporcional($r)); 
+            $r_tamanhos = $this -> setTamanhoProporcional($r);
             return $r_tamanhos;
         }
 

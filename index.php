@@ -22,11 +22,22 @@
     <?php
         
         $teste2 = new ImagemProporcional;
-        $verde = $teste2 -> TamanhosProporcionais(3000, 2000)[20];
+        $teste3 = new ImagemProporcional;
+        $teste4 = new ImagemProporcional;
+
+        $verde = $teste2 -> TamanhosProporcionais(20, 30)[0];
+        $verde2 = $teste3 -> TamanhosProporcionais(50, 30)[0];
+        $verde3 = $teste4 -> TamanhosProporcionais(80, 70)[0];
+
+
         echo "</br>";
-        $teste = new CalculaPreco;
-        $teste -> formula_pedido_instaarts('meta5mm', 0, 20, $verde);
-        echo "</br>";
+       $teste = new CalculaPreco;
+       $teste -> formula_pedido_instaarts('meta5mm', 0, 20, $verde);
+       echo "</br>";
+       $teste -> formula_pedido_instaarts('meta5mm', 0, 20, $verde2);
+       echo "</br>";
+       $teste -> formula_pedido_instaarts('meta5mm', 0, 20, $verde3);
+       echo "</br>";
 
     ?>
 

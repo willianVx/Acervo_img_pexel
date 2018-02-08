@@ -48,7 +48,6 @@ $(document).ready(function(){
         },function(data){
             // show the response
             $('.response').html(data);
-            add_efeito_imagens();
         }).fail(function(){
             // just in case posting your form failed
             alert( "Algo deu errado no carregamento." );
