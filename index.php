@@ -24,7 +24,7 @@
         $teste -> formula_pedido_instaarts('meta4mm', 0, 90, 50);
         echo "</br>";
         $teste2 = new ImagemProporcional;
-        $teste2 -> TamanhosProporcionais(20, 30);
+        $teste2 -> TamanhosProporcionais(3168, 4752);
     ?>
 
     <div class="col-lg-12">

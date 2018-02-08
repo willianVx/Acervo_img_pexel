@@ -30,7 +30,7 @@
             $total = $tamanhoX * $tamanhoY * $preco / 10000 + 40;
 
             if($v){
-                echo "Voce escolheu os tamanhos ". $tamanhoX. " cm por " . $tamanhoY ." com acabamento ".$acabamento." o valor total da sua obra é de: ".$total."";
+                echo "Voce escolheu os tamanhos ". $tamanhoX. " cm por " . $tamanhoY ." com acabamento ".$acabamento." o valor total da sua obra é de: ".$total." ";
             }
             else{
                 echo "Voce escolheu um tamanho invalido";

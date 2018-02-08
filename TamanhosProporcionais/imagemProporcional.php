@@ -1,4 +1,6 @@
 <?php
+
+
     class ImagemProporcional
     {
         private $tamanhoX;
@@ -52,15 +54,16 @@
                 return;
             }
             $cont = 0;
-
+            $tproporcional;
             while ($cont < sizeof($this -> tamanhosPadrao)) {
-                echo $this -> tamanhosPadrao[$cont] / $r."</br>";
-                $cont++;
+                $tproporcional = round($this -> tamanhosPadrao[$cont] / $r);
+                if($tproporcional < 10){
+                    $tproporcional = $this -> tamanhosPadrao[$cont] * $r;
+                }
+                
+                    return $this -> tamanhosPadrao[$cont] . $tproporcional ."</br>";
+                    $cont++; 
             }
-
-
-        //print $this -> tamanhosPadrao[0] / $r;
         }
-
     }
 ?>
