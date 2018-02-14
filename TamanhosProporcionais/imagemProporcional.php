@@ -19,6 +19,7 @@
             //$r_tamanhos = array_combine($this -> tamanhosPadrao, $this -> setTamanhoProporcional($r)); 
             $r_tamanhos = $this -> setTamanhoProporcional($r);
             return $r_tamanhos;
+            
         }
 
         public function setRazao($x, $y){

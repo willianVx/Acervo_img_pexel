@@ -12,6 +12,7 @@
                     <span class="galeria_pb"><p><a href="#">Preto e Branco</a></p></span>
                     <span class="galeria_praia"><p><a href="#">Praia</a></p></span>
                     <span class="galeria_por_do_sol"><p><a href="#">Por do Sol</a></p></span>
+                    <span class="galeria_Vintage"><p><a href="#">Vintage</a></p></span>
                 </div>
             </div>
         <?php

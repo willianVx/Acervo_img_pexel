@@ -36,6 +36,9 @@ $(document).ready(function(){
     $(".galeria_por_do_sol").click(function(){
         setCategoria("sunset");
     });
+    $(".galeria_Vintage").click(function(){
+        setCategoria("vintage");
+    });
     function setCategoria(categoria){
         var NovaCategoria = categoria;
         sendData(NovaCategoria);

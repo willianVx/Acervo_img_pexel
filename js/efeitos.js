@@ -69,6 +69,13 @@ $(document).ready(function(){
         $(".galeria_por_do_sol").removeClass("galeria_mouseover");
     });
 
+    $(".galeria_Vintage").mouseover(function(){
+        $(".galeria_Vintage").addClass("galeria_mouseover");
+    });
+    $(".galeria_Vintage").mouseout(function(){
+        $(".galeria_Vintage").removeClass("galeria_mouseover");
+    });
+
     $(".galeria_arte").click(function(){
         galeria_remover_class();
         $(".galeria_arte").addClass("galeria_click");
@@ -118,6 +125,10 @@ $(document).ready(function(){
         galeria_remover_class();
         $(".galeria_por_do_sol").addClass("galeria_click");
     });
+    $(".galeria_Vintage").click(function(){
+        galeria_remover_class();
+        $(".galeria_Vintage").addClass("galeria_click");
+    });
 
     function galeria_remover_class(){
         $(".galeria_arte").removeClass("galeria_click");
@@ -130,5 +141,6 @@ $(document).ready(function(){
         $(".galeria_pb").removeClass("galeria_click");
         $(".galeria_praia").removeClass("galeria_click");
         $(".galeria_por_do_sol").removeClass("galeria_click");
+        $(".galeria_Vintage").removeClass("galeria_click");
     }
 });
