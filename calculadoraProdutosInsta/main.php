@@ -31,7 +31,7 @@
 
             if($v){
                 //echo "tamanhos ". $tamanhoX. " cm por " . $tamanhoY ." acabamento ".$acabamento." Preço: ".$total." ";
-                print "A partir de: ".round($total, 2);
+                print "A partir de: R$ ".number_format($total, 2, ',', '.');
 
             }
             else{

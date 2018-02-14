@@ -52,11 +52,11 @@
 
                 <div class="col-lg-10">
                     <div class="response galeria_response_img"></div>
-                   
                 </div>
                 <footer>
                     <p>by will</p>
                 </footer>
+
     </div>
 
     </body> 

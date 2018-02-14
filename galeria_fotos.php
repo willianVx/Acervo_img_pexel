@@ -13,14 +13,14 @@
             $response = $pexels->search($pesquisa, 40, 1);
             //echo "<pre>".$response."</pre>";
             $data = $response->json();
-            $imagemP = new ImagemProporcional;
-            $precoP = new CalculaPreco;
             foreach ($data['photos'] as $photo) {
-                $tamanhosP = $imagemP -> TamanhosProporcionais(600, 600)[0];
-                echo "<div class='galeria_imagens'>";
-                echo "<div class='galeria_idividual_img'>  <a href='#'><img class='galeria_imagem_pexel' src='".$photo['src']['medium']."</a>'><div class='galeria_imagem_texto'>". galeria_preco($photo['width'], $photo['height']). "</div></div>";
-                //echo $photo['width']." por ".$photo['height'];
-                echo "</div>";
+                    echo "<a href=#>";
+                        echo "<img class='galeria_imagem_pexel' src='".$photo['src']['medium']."'>";
+                        
+                    echo "</a>";
+                
+                //echo $photo['width']." por ".$photo['height']; 
+                //. galeria_preco($photo['width'], $photo['height'])
             }
     }
 ?>

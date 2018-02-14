@@ -57,7 +57,7 @@
             $cont = 0;
             $tproporcional;
             while ($cont < sizeof($this -> tamanhosPadrao)) {
-                $tproporcional = round($this -> tamanhosPadrao[$cont] / $r);
+                $tproporcional = $this -> tamanhosPadrao[$cont] / $r;
                 if($tproporcional < 10){
                     $tproporcional = $this -> tamanhosPadrao[$cont] * $r;
                 }
