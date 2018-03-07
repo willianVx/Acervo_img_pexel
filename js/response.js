@@ -1,48 +1,12 @@
 $(document).ready(function(){
-    $(".galeria_arte").click(function(){
-        setCategoria("art painting colors");
+
+    // define a categoria de acordo com o botao clicado 
+    $(".galeria").click(function(){
+        var categoriaID = $(this).attr('data-galeria');
+        sendData(categoriaID);
     });
 
-    $(".galeria_natureza").click(function(){
-        setCategoria("nature forest");
-    });
-    $(".galeria_cidades").click(function(){
-        setCategoria("london new york tokyo rio de janeiro paris roma");
-    });
-    $(".galeria_esporte").click(function(){
-        setCategoria("ball sport atletic");
-    });
-
-    $(".galeria_paisagem").click(function(){
-        setCategoria("landscape");
-    });
-
-    $(".galeria_casa").click(function(){
-        setCategoria("design interior house");
-    });
-
-    $(".galeria_festa").click(function(){
-        setCategoria("party music");
-    });
-
-    $(".galeria_pb").click(function(){
-        setCategoria("black an white gray");
-    });
-
-    $(".galeria_praia").click(function(){
-        setCategoria("beach ocean");
-    });
-
-    $(".galeria_por_do_sol").click(function(){
-        setCategoria("sunset");
-    });
-    $(".galeria_Vintage").click(function(){
-        setCategoria("vintage");
-    });
-    function setCategoria(categoria){
-        var NovaCategoria = categoria;
-        sendData(NovaCategoria);
-    }
+    //envia dados para o servidor e retorna imagens de acordo com a categoria
     function sendData(NovaCategoria){
         // show that something is loading
         $('.response').html("<b>Carregando...</b>");
@@ -57,6 +21,5 @@ $(document).ready(function(){
         });
         //to prevent refreshing the whole page page
         return false;
-
     }
 });

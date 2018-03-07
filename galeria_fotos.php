@@ -13,12 +13,12 @@
             $response = $pexels->search($pesquisa, 40, 1);
             //echo "<pre>".$response."</pre>";
             $data = $response->json();
+            $contador = 1;
             foreach ($data['photos'] as $photo) {
                     echo "<a href=#>";
-                        echo "<img class='galeria_imagem_pexel' src='".$photo['src']['medium']."'>";
-                        
+                        echo "<img class='galeria_imagem_pexel' data-imagem='imagem".$contador."' src='".$photo['src']['medium']."'>";
                     echo "</a>";
-                
+                $contador++;
                 //echo $photo['width']." por ".$photo['height']; 
                 //. galeria_preco($photo['width'], $photo['height'])
             }
