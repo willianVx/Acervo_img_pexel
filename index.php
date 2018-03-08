@@ -49,6 +49,10 @@
                     <?php
                         galeria_categorias();
                     ?>
+                    <div class="categorias_menu_mobile">
+                        <img src="img/mobile_menu.png" alt="menu">
+                    </div>
+                    
                 </div>
 
                 <div class="col-lg-10">

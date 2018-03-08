@@ -22,4 +22,5 @@ $(document).ready(function(){
         //to prevent refreshing the whole page page
         return false;
     }
+    
 });
