@@ -9,7 +9,7 @@ $(document).ready(function(){
     //envia dados para o servidor e retorna imagens de acordo com a categoria
     function sendData(NovaCategoria){
         // show that something is loading
-        $('.response').html("<b>Carregando...</b>");
+        $('.response').html("<img src='img/carregando.gif' alt='carregando' class='galeria_carregando'>");
         $.post('galeria_fotos.php', {
             categoria: JSON.stringify(NovaCategoria)
         },function(data){

@@ -13,6 +13,7 @@
                     <span class="galeria" data-galeria="beach ocean"><p><a href="#">Praia</a></p></span>
                     <span class="galeria" data-galeria="sunset"><p><a href="#">Por do Sol</a></p></span>
                     <span class="galeria" data-galeria="vintage"><p><a href="#">Vintage</a></p></span>
+                    <span class="galeria" data-galeria="love valentines day"><p><a href="#">Amor</a></p></span>
                 </div>
             </div>
         <?php
