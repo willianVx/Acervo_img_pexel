@@ -52,13 +52,13 @@
 .galeria_imagem_pexel{
     position: relative;
     width: 30em;
-    max-height: 35em;
+    max-height: 25em;
     margin: 0.2em;
 }
 .galeria_response_img{
     position: relative;
     max-width: 100em;
-    padding:2em;
+    padding:4.1em;
     border: 1px solid;
     border-color: rgb(82, 165, 100);
 }
