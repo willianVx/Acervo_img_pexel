@@ -15,8 +15,8 @@ $(document).ready(function(){
     });
     //mostra tamanhos possiveis e preco minimo para a fotografia  
     $( ".galeria_response_img" ).on( "mouseover", "img[data-imagem]", function() {
-        //console.log($( this ));
-      });
+        console.log($(this));
+    });
     
     $(".categorias_menu_mobile").click(function(){
         $(this).hide();

@@ -17,6 +17,7 @@
             foreach ($data['photos'] as $photo) {
                     echo "<a href=#>";
                         echo "<img class='galeria_imagem_pexel' data-imagem='imagem".$contador."' src='".$photo['src']['medium']."'>";
+                        echo "<div class='galeria_preco' data-preco='texto".$contador."'>A partir de: R$ 10.00</div>";
                     echo "</a>";
                 $contador++;
                 //echo $photo['width']." por ".$photo['height']; 

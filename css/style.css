@@ -70,7 +70,11 @@
     margin: auto;
     display: block;
 }
-
+.galeria_preco{
+    position: relative;
+    width: 30em;
+    color: #6d6d6d;
+}
 @media(max-width:1024px){
     .galeria_categoria{
         display: none;

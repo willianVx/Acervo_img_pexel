@@ -19,7 +19,7 @@ $(document).ready(function(){
             // just in case posting your form failed
             alert( "Algo deu errado no carregamento." );
         });
-        //to prevent refreshing the whole page page
+        //to prevent refreshing the whole page
         return false;
     }
     
