@@ -1,5 +1,4 @@
 <?php
-
     if (isset($_POST["categoria"])){
         $pesquisa['categoria'] = $_POST['categoria'];
         galeria_set_fotos($pesquisa['categoria']);
@@ -15,10 +14,16 @@
             $data = $response->json();
             $contador = 1;
             foreach ($data['photos'] as $photo) {
-                    echo "<a href=#>";
-                        echo "<img class='galeria_imagem_pexel' data-imagem='imagem".$contador."' src='".$photo['src']['medium']."'>";
-                        echo "<div class='galeria_preco' data-preco='texto".$contador."'>A partir de: R$ 10.00</div>";
-                    echo "</a>";
+                        ?>
+
+                        <div class="col-lg-4 galeria_imagem_pexel_box">
+                            <img class="galeria_imagem_pexel" src="<?php  echo $photo['src']['medium'] ?>" alt="Imagem do Acervo" data-imagem="imagem<?php echo $contador ?>" data-imagem-original="<?php echo $photo['src']['original'] ?>">
+                            <button class="galeria_acervo_botao" type="button" class="btn btn-success" data-botao="botao<?php echo $contador  ?>">Usar essa</button>
+                        </div>
+                        
+                        <?php
+                        //echo "<img class='galeria_imagem_pexel' data-imagem='imagem".$contador."' src='".$photo['src']['medium']."'>";
+                        //echo "<div class='galeria_preco' data-preco='texto".$contador."'>".galeria_preco($photo['width'], $photo['height'])."</div>";
                 $contador++;
                 //echo $photo['width']." por ".$photo['height']; 
                 //. galeria_preco($photo['width'], $photo['height'])

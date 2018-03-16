@@ -13,11 +13,19 @@ $(document).ready(function(){
         $(".galeria").removeClass("galeria_click");
         $(this).addClass("galeria_click");
     });
-    //mostra tamanhos possiveis e preco minimo para a fotografia  
-    $( ".galeria_response_img" ).on( "mouseover", "img[data-imagem]", function() {
-        console.log($(this));
+    //mostra botao da imagem
+    $( ".galeria_response_img" ).on( "mouseover", ".galeria_imagem_pexel_box", function() {
+        var UsarEsse = $(this)["0"].children[1];
+        $(UsarEsse).show();
     });
-    
+    $( ".galeria_response_img" ).on( "mouseout", ".galeria_imagem_pexel_box", function() {
+        $(".galeria_acervo_botao").hide();
+    });
+
+    $( ".galeria_response_img" ).on( "mouseover", "img[data-imagem]", function() {
+        //console.log($(this)["0"].dataset.imagemOriginal);
+    });
+
     $(".categorias_menu_mobile").click(function(){
         $(this).hide();
         $(".galeria_categoria").show();
@@ -36,6 +44,5 @@ $(document).ready(function(){
         });
 
     }
-    
 });
 

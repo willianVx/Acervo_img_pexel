@@ -50,11 +50,13 @@
                     
                 </div>
 
-                <div class="col-lg-10">
-                    <div class="response galeria_response_img"></div>
+                <div class="container-fluid">
+                    <div class="response galeria_response_img col-lg-12"></div>
                 </div>
     </div>
         
+    
+
     </body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

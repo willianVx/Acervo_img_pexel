@@ -7,21 +7,21 @@
     position: fixed;
     width: 200px;
     height: 460px;
-    color: #535353;
-    background: rgb(229,229,229); /* Old browsers */
-    background: -moz-linear-gradient(top, rgba(229,229,229,1) 0%, rgba(178,178,178,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(229,229,229,1) 0%,rgba(178,178,178,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(229,229,229,1) 0%,rgba(178,178,178,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5e5e5', endColorstr='#b2b2b2',GradientType=0 ); /* IE6-9 */
+    color: #ffffff;
+    background: rgb(71,175,88);
+    background: -moz-linear-gradient(top, rgba(71,175,88,1) 1%, rgba(28,142,45,1) 42%, rgba(28,142,45,1) 99%);
+    background: -webkit-linear-gradient(top, rgba(71,175,88,1) 1%,rgba(28,142,45,1) 42%,rgba(28,142,45,1) 99%);
+    background: linear-gradient(to bottom, rgba(71,175,88,1) 1%,rgba(28,142,45,1) 42%,rgba(28,142,45,1) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#47af58', endColorstr='#1c8e2d',GradientType=0 );
     border-radius: 10px;
 }
 .galeria_categoria a{
     text-decoration: none;
-    color: #6d6d6d;
+    color: #ffffff;
 }
 .galeria_mouseover{
     font-size: 150%;
-}
+}   
 .galeria_click{
     font-size: 200%;
 }
@@ -49,11 +49,19 @@
     text-decoration: none;
     color: green;
 }
+.galeria_imagem_pexel_box{
+    position: relative;
+    width: 400px;
+    height: 300px;
+    padding:0.2em;
+    margin: 4px;
+}
 .galeria_imagem_pexel{
     position: relative;
-    width: 30em;
-    max-height: 25em;
-    margin: 0.2em;
+    max-width: 400px;
+    max-height: 300px;
+    margin:auto;
+    display: block;
 }
 .galeria_response_img{
     position: relative;
@@ -74,6 +82,14 @@
     position: relative;
     width: 30em;
     color: #6d6d6d;
+}
+.galeria_acervo_botao{
+    display: none;
+    position: relative;
+    z-index: 1;
+    top: -50px;
+    left: 40%;
+    cursor: pointer;
 }
 @media(max-width:1024px){
     .galeria_categoria{
