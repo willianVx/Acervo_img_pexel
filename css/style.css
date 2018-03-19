@@ -55,6 +55,7 @@
     height: 300px;
     padding:0.2em;
     margin: 4px;
+    text-align: center;
 }
 .galeria_imagem_pexel{
     position: relative;
@@ -62,6 +63,7 @@
     max-height: 300px;
     margin:auto;
     display: block;
+    cursor: pointer;
 }
 .galeria_response_img{
     position: relative;
@@ -84,63 +86,92 @@
     color: #6d6d6d;
 }
 .galeria_acervo_botao{
+    position: absolute;
     display: none;
-    position: relative;
+    padding: 50px;
+    color: white;
     z-index: 1;
-    top: -50px;
-    left: 40%;
-    cursor: pointer;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.72) 1%, rgba(0,0,0,0.74) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8000000', endColorstr='#bd000000',GradientType=0 );
 }
+
+@media(max-width:1440px){
+
+    .galeria_response_img{
+        position: relative;
+        max-width: 80em;
+        padding:4.1em;
+    }
+
+}
+
 @media(max-width:1024px){
-    .galeria_categoria{
-        display: none;
-        width: 85%;
-        height: 100%;
-        margin: 0px;
-        border-radius: 0px;
-        color: white;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 5px;
-        position: fixed;
-        text-align: center;
-        background: -moz-linear-gradient(top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.72) 1%, rgba(0,0,0,0.74) 100%);
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8000000', endColorstr='#bd000000',GradientType=0 );
-    }
-    .galeria_categoria a{
-        text-decoration: none;
-        color: #cecece;
-    }
-    .galeria_imagem_pexel{
-        position: relative;
-        z-index: -1;
-        max-width: 100%;
-        max-height: 100%;
-        margin: 10px;
-        margin-left: auto;
-	    margin-right: auto;
-        display: block;
-    }
-    .categorias_menu_mobile{
-        position: fixed;
-        z-index: 1;
-        width: 4em;
-        height: 4em;
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 10px;
-        background: -moz-linear-gradient(top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.72) 1%, rgba(0,0,0,0.74) 100%);
-        background: -webkit-linear-gradient(top, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
-        background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8000000', endColorstr='#bd000000',GradientType=0 );
-        padding: 1em;
-    }
-    .categorias_menu_mobile img{
-        display: inherit;
-        position: relative;
-        max-width: 2em;
+
+    .galeria_response_img{
+        max-width: 50em;
+        margin-left: 18em;
     }
     
 }
 
+@media (max-width:768px){
+
+    .galeria_imagem_pexel{
+        position: relative;
+        max-width: 300px;
+        max-height: 300px;
+        margin:auto;
+        display: block;
+        cursor: pointer;
+    }
+
+}
+@media (max-width:425px){
+    .galeria_imagem_pexel_box{
+        width: 210px;
+        height: 140px;
+    }
+
+    .galeria_imagem_pexel{
+        position: relative;
+        max-width: 200;
+        margin-left: 0px;
+        margin-top: 1px;
+    }
+
+    .galeria_response_img{
+        max-width: 20em;
+        margin-left: 7em;
+        padding: 0px;
+    }
+    .container-fluid{
+       padding: 0px;
+       margin: 0px;    
+    }
+
+    .galeria_categoria{
+        display: none;
+        width: 100%;
+        height: 100%; 
+    }
+
+    .categorias_menu_mobile img{
+        position: fixed;
+        display: block;
+        width: 50px;
+    }
+    
+    .galeria_acervo_botao{
+        padding: 10px;
+        top: 20%;
+        left: 20%;
+        transform: translate(-20%, -20%);
+    }
+    
+}

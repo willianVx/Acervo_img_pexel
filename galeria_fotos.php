@@ -18,7 +18,7 @@
 
                         <div class="col-lg-4 galeria_imagem_pexel_box">
                             <img class="galeria_imagem_pexel" src="<?php  echo $photo['src']['medium'] ?>" alt="Imagem do Acervo" data-imagem="imagem<?php echo $contador ?>" data-imagem-original="<?php echo $photo['src']['original'] ?>">
-                            <button class="galeria_acervo_botao" type="button" class="btn btn-success" data-botao="botao<?php echo $contador  ?>">Usar essa</button>
+                            <button class="galeria_acervo_botao" type="button" class="btn btn-success" data-botao="botao<?php echo $contador  ?>">Usar imagem</button>
                         </div>
                         
                         <?php

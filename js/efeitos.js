@@ -1,5 +1,10 @@
+//define funcao para imagem escolhida
+function imagem_do_acervo(data_imagem, data_imagem_original){
+    this.data_imagem = data_imagem;
+    this.data_imagem_original = data_imagem_original;
+}
+
 $(document).ready(function(){
-    
     //muda a cor da categoria quando o mouse está sobre ela
     $(".galeria").mouseover(function(){
         $(this).addClass("galeria_mouseover");
@@ -17,13 +22,20 @@ $(document).ready(function(){
     $( ".galeria_response_img" ).on( "mouseover", ".galeria_imagem_pexel_box", function() {
         var UsarEsse = $(this)["0"].children[1];
         $(UsarEsse).show();
+
+        //quando clicado define a imagem escolhida
+
+        $(UsarEsse).click(function(){
+
+            var data_imagem = $(this)["0"].parentElement.childNodes[1].dataset.imagem;
+            var data_imagem_original = $(this)["0"].parentElement.childNodes[1].dataset.imagemOriginal;
+            var define_imagem = new imagem_do_acervo("oi", data_imagem_original);
+
+        });
+
     });
     $( ".galeria_response_img" ).on( "mouseout", ".galeria_imagem_pexel_box", function() {
         $(".galeria_acervo_botao").hide();
-    });
-
-    $( ".galeria_response_img" ).on( "mouseover", "img[data-imagem]", function() {
-        //console.log($(this)["0"].dataset.imagemOriginal);
     });
 
     $(".categorias_menu_mobile").click(function(){
@@ -32,7 +44,7 @@ $(document).ready(function(){
     });
 
     //funcionamento do menu mobile
-    if (window.innerWidth < 1024) {
+    if (window.innerWidth <= 425) {
 
         $(".galeria").click(function(){
             $(".galeria_categoria").hide();
