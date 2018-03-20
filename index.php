@@ -54,8 +54,6 @@
                     <div class="response galeria_response_img col-lg-12"></div>
                 </div>
     </div>
-        
-    
 
     </body>
 
