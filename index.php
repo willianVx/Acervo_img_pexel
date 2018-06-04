@@ -8,10 +8,12 @@
  
 <html>
     <head>
-    <title>teste Pexel</title>
+
+    <title>Acervo Instaarts</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" type="imagem/png" href="https://instaarts.com/wp-content/uploads/2018/03/logo-instaarts-76.png" />
     </head>
     <body>
 
@@ -36,23 +38,45 @@
         */
 
     ?>
-    
-    <div class="col-lg-12">
-            <h1>Acervo de imagens</h1>
-            
-                <div class="col-lg-2">
-                    <?php
-                        galeria_categorias();
-                    ?>
-                    <div class="categorias_menu_mobile">
-                        <img src="img/mobile_menu.png" alt="menu">
-                    </div>
-                    
-                </div>
 
-                <div class="container-fluid container_response">
-                    <div class="response galeria_response_img col-lg-12"></div>
-                </div>
+    <img src="img/instaarts_acervo_head.png" alt="cabeçalho Instaarts acervo" class="img_head">
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="envelope">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-5">
+                        <a href="https://instaarts.com/"><button class="btn btn-success">Voltar a loja</button></a>
+                        <?php
+                           galeria_categorias();
+                        ?>
+                        <div class="categorias_menu_mobile">
+                            <button class="btn btn-success"><span class="glyphicon glyphicon-align-justify"></span></button>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-xl-9 col-lg-9 col-md-7 col-sm-7 container_response">
+                        <div class="response galeria_response_img"></div>
+
+                        <nav class = "controle_de_paginas">
+                            <ul class="pagination pagination justify-content-center">
+                                <li class="previous_page">
+                                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                </li>
+                                <li class="page-item" data-pagina="1"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item" data-pagina="2"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item" data-pagina="3"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item" data-pagina="4"><a class="page-link" href="#">4</a></li>
+                                <li class="next_page">
+                                <a class="page-link" href="#">Próximo</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+            </div>
+        </div>
     </div>
 
     </body>

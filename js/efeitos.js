@@ -5,6 +5,7 @@ function imagem_do_acervo(data_imagem, data_imagem_original){
 }
 
 $(document).ready(function(){
+    
     //muda a cor da categoria quando o mouse está sobre ela
     $(".galeria").mouseover(function(){
         $(this).addClass("galeria_mouseover");
@@ -29,7 +30,9 @@ $(document).ready(function(){
 
             var data_imagem = $(this)["0"].parentElement.childNodes[1].dataset.imagem;
             var data_imagem_original = $(this)["0"].parentElement.childNodes[1].dataset.imagemOriginal;
-            var define_imagem = new imagem_do_acervo("oi", data_imagem_original);
+            //var define_imagem = new imagem_do_acervo("oi", data_imagem_original);
+            window.location.assign("https://instaarts.com/produto/quadro-personalizado-iap/?img="+data_imagem_original);
+            console.log(data_imagem_original);
 
         });
 
@@ -39,22 +42,14 @@ $(document).ready(function(){
     });
 
     $(".categorias_menu_mobile").click(function(){
-        $(this).hide();
         $(".galeria_categoria").show();
+            $(".galeria").click(function(){
+                $(".galeria_categoria").hide();
+            });
     });
 
-    //funcionamento do menu mobile
-    if (window.innerWidth <= 425) {
-
-        $(".galeria").click(function(){
-            $(".galeria_categoria").hide();
-            $(".categorias_menu_mobile").show();
-        });
-
-        $(".categorias_menu_mobile").click(function(){
-            $(".galeria_response_img").html(" ");
-        });
-
-    }
+    $(".glyphicon-remove").click(function(){
+        $(".galeria_categoria").hide();
+    });
 });
 

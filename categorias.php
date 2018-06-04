@@ -2,6 +2,7 @@
     function galeria_categorias(){
         ?>
             <div class="galeria_categoria">
+                <span class="glyphicon glyphicon-remove"></span>
                 <div class="galeria_categoria_titulo"><h3>Categorias</h3></div>
                 <hr>
                 <div>
@@ -13,7 +14,7 @@
                     <span class="galeria" data-galeria="beach ocean"><p><a href="#">Praia</a></p></span>
                     <span class="galeria" data-galeria="sunset"><p><a href="#">Por do Sol</a></p></span>
                     <span class="galeria" data-galeria="vintage"><p><a href="#">Vintage</a></p></span>
-                    <span class="galeria" data-galeria="abstract"><p><a href="#">Abstrato</a></p></span>
+                    <span class="galeria" data-galeria="abstract"><p><a href="#">Abstrato</a></p></span>       
                 </div>
             </div>
         <?php
