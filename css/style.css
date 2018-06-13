@@ -108,7 +108,7 @@
     background: linear-gradient(to bottom, rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.72) 1%,rgba(0,0,0,0.74) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b8000000', endColorstr='#bd000000',GradientType=0 );
 }
-.btn-success{
+.voltar_loja{
     position: relative;
     top: -150px;
     bottom: 40px;
@@ -122,21 +122,188 @@
 .pagination li a{
     color: rgb(71,175,88);
 }
+.pagination li a:hover{
+    color: rgb(49, 136, 63)!important;
+}
 
+.botao_ativado{
+    background-color: rgb(71,175,88)!important;
+    color: white!important;
+}
 
-@media(max-width:1440px){
+.head_texto{
+    position: relative;
+    font-size: 18;
+    top: -150px;
+    left: 280px;
+    color: white;
+    opacity: 0.8;
+}
 
+/* The overlay effect - lays on top of the container and over the image */
+.overlay{
+    position: absolute; 
+    top: 0;
+    right: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.801); /* Black see-through */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    color: #f1f1f1; 
+    cursor: pointer;
+    width: 50px;
+    transition: .5s ease;
+    display: none;
+    color: white;
+    font-size: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+.fav_b{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.801); /* Black see-through */
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    display: none;
+    color: #f1f1f1; 
+    cursor: pointer;
+    width: 50px;
+    transition: .5s ease;       
+    color: white;
+    font-size: 10px;
+    padding: 10px;
+    text-align: center;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 0!important;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.sub_categorias_over{
+
+    background-color: rgb(71,175,88)!important;
+    color: rgb(255, 255, 255)!important;
+}
+
+.sub_categorias{
+
+    position: relative;
+    bottom: 15px;
 
 }
 
-@media(max-width:1024px){
+.sub_categorias span{
 
-    .btn-success{
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(71,175,88);
+    margin: 5px;
+    border: 1px solid rgb(71,175,88);
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+.aba_favoritos{
+
+    position: fixed;
+    padding: 10px;
+    z-index: 2;
+    left: 600px;
+    background-color: black;
+    color: rgb(71,175,88);
+    font-size: 15px;    
+    border-radius: 6px;
+    cursor: pointer;
+
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+@media(max-width:2560px){
+    .aba_favoritos{
+        left: 600px;
+    }
+}
+
+@media(max-width:1440px){
+    .aba_favoritos{
+        left: 360px;
+    }
+}
+
+@media(max-width:1024px){
+    .voltar_loja{
         position: relative;
         top: -50px;
         left: 600px;
     }
-    
 }
 
 @media (max-width:768px){
@@ -149,6 +316,13 @@
         display: block;
         cursor: pointer;
     }
+    .voltar_loja{
+        top: -120px;
+        
+    }
+    .aba_favoritos{
+        left: 260px;
+    }
 
 }
 @media (max-width:425px){
@@ -160,9 +334,8 @@
     .categorias_menu_mobile{
         display: block;
         position: fixed;
-        top: 100px;
+        top: 20px;
         z-index: 1;
-        left: -55%;
     }
     .galeria_imagem_pexel_box{
         position: relative;
@@ -175,14 +348,16 @@
     }
     .galeria_categoria{
         display: none;
+        top: 0;
+        left: 0;
         z-index: 2;
         width: 100%;
         height: 100%;
     }
 
-    .btn-success{
+    .voltar_loja{
         position: relative;
-        top: 0px;
+        top: -100px;
         left: 250px;
     }
     .img_head{
@@ -191,5 +366,13 @@
         padding:0em;
         padding-top:0em;
         left: -40px;
+    }
+    .head_texto{
+        position: relative;
+        font-size: 12;
+        top: -0px;
+        left: 5;
+        color: rgb(73, 73, 73);  
+        opacity: 1;
     }
 }

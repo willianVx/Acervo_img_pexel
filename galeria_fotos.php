@@ -20,6 +20,8 @@
                         <div class="col-lg-2 galeria_imagem_pexel_box">
                             <img class="galeria_imagem_pexel" src="<?php  echo $photo['src']['medium'] ?>" alt="Imagem do Acervo" data-imagem="imagem<?php echo $contador ?>" data-imagem-original="<?php echo $photo['src']['original'] ?>">
                             <button class="galeria_acervo_botao" type="button" class="btn btn-success" data-botao="botao<?php echo $contador  ?>">Usar imagem</button>
+                            <div class="overlay"><span class="glyphicon glyphicon-zoom-in"></span></div>
+                            <div class="fav_b"><div class="glyphicon glyphicon-heart"></div></div>
                         </div>
                         
                         <?php
