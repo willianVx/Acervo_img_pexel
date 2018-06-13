@@ -1,6 +1,10 @@
 $(document).ready(function(){
     //inicia a página com imagens pexel
     sendData("painting colors art", 1);
+
+    setCookie("teste_1", "texto texto texto", 2);
+    setCookie("teste_2", "texto texto texto", 2);
+    setCookie("teste_3", "texto texto texto", 2);
     
     //verica se a aba atual é a de favoritos 
     var aba_atual = false;

@@ -33,10 +33,11 @@
         indice_controle: document.cookie.split(';').length,
         
         atualiza_url_imagens: function(){
-    
-            lista_cookie = document.cookie.split(';');
+            lista_cookie_unfiltered = document.cookie.split(';');
+            lista_cookie = lista_cookie_unfiltered.filter(this.filtra_cookie_fav);
+            
             co = document.cookie.split(';').length;
-    
+            console.log(lista_cookie.filter(this.filtra_cookie_fav));
             if (co > 1) {
                 for (let index = 0; index < lista_cookie.length; index++) {
     
@@ -46,6 +47,11 @@
                 }
             }
     
+        },
+        filtra_cookie_fav: function(value){
+
+            return value.includes('fav');
+
         },
         set_indice_controle: function(){
     
