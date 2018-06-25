@@ -131,5 +131,6 @@
     <script src="js/response.js"></script>
     <script src="js/efeitos.js"></script>
     <script src="js/cookie_fav_manager.js"></script>
+    <script src="js/webstorage_fav_manager.js"></script>
 
 </html>

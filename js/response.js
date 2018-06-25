@@ -1,11 +1,12 @@
 $(document).ready(function(){
+    /*
+    *   inicia o webstorage_fav_manager
+    */
+    fav();
+    
     //inicia a página com imagens pexel
     sendData("painting colors art", 1);
 
-    setCookie("teste_1", "texto texto texto", 2);
-    setCookie("teste_2", "texto texto texto", 2);
-    setCookie("teste_3", "texto texto texto", 2);
-    
     //verica se a aba atual é a de favoritos 
     var aba_atual = false;
 
@@ -196,42 +197,12 @@ $(document).ready(function(){
        page.classList.add("botao_ativado");
 
     });
-    $('.contador_favoritos').html(imagens_favoritadas.url_imagens.length);
-    /************
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     
-    
-    deleteCookie("fav_0");
-    deleteCookie("fav_1");
-    deleteCookie("fav_2");
-    deleteCookie("fav_3");
-    deleteCookie("fav_4");
-    deleteCookie("fav_5");
-    deleteCookie("fav_6");
-    deleteCookie("fav_7");
-    deleteCookie("fav_8");
-    deleteCookie("fav_9");
-    deleteCookie("fav_10");
-    deleteCookie("PHPSESSID");
+    $('.contador_favoritos').html(fav().length);
 
-    /************
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     */
+    //imagens_favoritadas.set_indice_controle();
+    //imagens_favoritadas.atualiza_url_imagens();
 
-    imagens_favoritadas.set_indice_controle();
-    imagens_favoritadas.atualiza_url_imagens();
-
-    $('.contador_favoritos').html(imagens_favoritadas.url_imagens.length);
+    $('.contador_favoritos').html(fav().length);
 
     $(".galeria_response_img").on("mouseover", ".galeria_imagem_pexel_box", function(){
 
@@ -241,8 +212,8 @@ $(document).ready(function(){
             dataset_imagem = $(this)["0"].childNodes[0].dataset.imagemOriginal;
         }
 
-        for (let index = 0; index < imagens_favoritadas.url_imagens.length; index++) {
-            const element = imagens_favoritadas.url_imagens[index];
+        for (let index = 0; index < fav().length; index++) {
+            const element = fav()[index];
 
             if (element[1] == dataset_imagem) {
                 $(this)["0"].children[3].style = "color: rgb(71,175,88);";
@@ -262,12 +233,12 @@ $(document).ready(function(){
 
         if ($(this)["0"].style.color != "rgb(71, 175, 88)") {
             this.style = "color: rgb(71,175,88);";
-        }else{
+        }else{ 
             this.style = "color: rgb(255,255,255);";
         }
         if (aba_atual) {
             $(this)["0"].parentElement.style = "display: none;";
-            if (imagens_favoritadas.url_imagens.length == 1) {
+            if (fav().length == 1) {
                 var mensagem_sem_favoritos = document.createElement("div");
                 mensagem_sem_favoritos.setAttribute("class", "jumbotron");
                 mensagem_sem_favoritos.innerText = "Click em uma das categorias para favoritar mais imagens!";
@@ -276,8 +247,9 @@ $(document).ready(function(){
             }
         }
 
-        imagens_favoritadas.add_url(fav_url);
-        $('.contador_favoritos').html(imagens_favoritadas.url_imagens.length);
+        //imagens_favoritadas.add_url(fav_url);
+        add_fav(fav_url);
+        $('.contador_favoritos').html(fav().length);
 
     });
 
@@ -291,7 +263,7 @@ $(document).ready(function(){
         $('.sub_categorias').hide();
         $('.controle_de_paginas').hide();
 
-        if (imagens_favoritadas.url_imagens.length == 0) {
+        if (fav().length == 0) {
 
             var mensagem_sem_favoritos = document.createElement("div");
             mensagem_sem_favoritos.setAttribute("class", "jumbotron");
@@ -301,9 +273,9 @@ $(document).ready(function(){
 
         }
 
-        for (let index = 0; index < imagens_favoritadas.url_imagens.length; index++) {
+        for (let index = 0; index < fav().length; index++) {
 
-            const element  = imagens_favoritadas.url_imagens[index];
+            const element  = fav()[index];
 
             var imagem_box = document.createElement("div");
             var img        = document.createElement("img");

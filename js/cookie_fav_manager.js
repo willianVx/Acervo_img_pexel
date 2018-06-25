@@ -1,3 +1,4 @@
+    /*
     function setCookie(cname,cvalue,exdays) {
         var d = new Date();
         d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -37,7 +38,7 @@
             lista_cookie = lista_cookie_unfiltered.filter(this.filtra_cookie_fav);
             
             co = document.cookie.split(';').length;
-            console.log(lista_cookie.filter(this.filtra_cookie_fav));
+            
             if (co > 1) {
                 for (let index = 0; index < lista_cookie.length; index++) {
     
@@ -115,3 +116,4 @@
 
         }
     }
+*/
