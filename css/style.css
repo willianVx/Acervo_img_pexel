@@ -61,25 +61,6 @@
     text-decoration: none;
     color: green;
 }
-.galeria_imagem_pexel_box{
-    position: relative;
-    width: 400px;
-    height: 250px;
-    padding: 4px;
-    padding-top:8px;
-    padding-bottom: 8px;
-    margin: 4px;
-    text-align: center;
-    border: 1px solid rgb(82, 165, 100);
-}
-.galeria_imagem_pexel{
-    position: relative;
-    max-width: 100%;
-    max-height: 100%;
-    margin:auto;
-    display: block;
-    cursor: pointer;
-}
 .categorias_menu_mobile{
     display: none;
 }
@@ -140,44 +121,6 @@
     opacity: 0.8;
 }
 
-/* The overlay effect - lays on top of the container and over the image */
-.overlay{
-    position: absolute; 
-    top: 0;
-    right: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.801); /* Black see-through */
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    color: #f1f1f1; 
-    cursor: pointer;
-    width: 50px;
-    transition: .5s ease;
-    display: none;
-    color: white;
-    font-size: 10px;
-    padding: 10px;
-    text-align: center;
-  }
-  
-.fav_b{
-    position: absolute; 
-    top: 0;
-    left: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.801); /* Black see-through */
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-    display: none;
-    color: #f1f1f1; 
-    cursor: pointer;
-    width: 50px;
-    transition: .5s ease;       
-    color: white;
-    font-size: 10px;
-    padding: 10px;
-    text-align: center;
-}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -280,6 +223,49 @@
     cursor: pointer;
 
 }
+.response{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 33%;
+    max-width: 35%;
+    padding: 0 4px;
+  }
+  
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    max-width: 100%;
+    cursor: pointer;
+  }
+  .overlay{
+      position: relative;
+      display: none;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.363);
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
     .modal-content {
@@ -307,15 +293,6 @@
 }
 
 @media (max-width:768px){
-
-    .galeria_imagem_pexel{
-        position: relative;
-        max-width: 300px;
-        max-height: 300px;
-        margin:auto;
-        display: block;
-        cursor: pointer;
-    }
     .voltar_loja{
         top: -120px;
         
@@ -336,15 +313,6 @@
         position: fixed;
         top: 20px;
         z-index: 1;
-    }
-    .galeria_imagem_pexel_box{
-        position: relative;
-        width: 300px;
-        height: 150px;
-    }
-    .galeria_imagem_pexel{
-        max-width: 100%;
-        max-height: 80%;
     }
     .galeria_categoria{
         display: none;

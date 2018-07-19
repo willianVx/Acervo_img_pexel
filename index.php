@@ -25,28 +25,6 @@
     </head>
     <body>
 
-    <?php
-        /*
-        function inicia($n1, $n2){
-
-            $teste2 = new ImagemProporcional;
-            $verde2 = $teste2 -> TamanhosProporcionais($n1, $n2)[0];
-
-            $teste = new CalculaPreco;
-            return $teste -> formula_pedido_instaarts('meta5mm', 0, 20, $verde2);
-
-        }
-
-        $Tamanhos = array(100, 200,300,400,500);
-        
-        for ($i=0; $i < sizeof($Tamanhos) ; $i++) { 
-            inicia($Tamanhos[$i],$Tamanhos[0]);
-            echo "</br>";
-        }
-        */
-
-    ?>
-
     <img id="teste" src="img/instaarts_acervo_head.png" alt="cabeçalho Instaarts acervo" class="img_head">
 
     <div class="container">

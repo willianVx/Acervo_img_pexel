@@ -207,6 +207,7 @@ $(document).ready(function(){
     $(".galeria_response_img").on("mouseover", ".galeria_imagem_pexel_box", function(){
 
         var dataset_imagem = $(this)["0"].childNodes[1].dataset.imagemOriginal;
+        
 
         if (typeof dataset_imagem == 'undefined') {
             dataset_imagem = $(this)["0"].childNodes[0].dataset.imagemOriginal;
@@ -225,7 +226,8 @@ $(document).ready(function(){
 
     //define ação para botão de favoritar 
     $(".galeria_response_img").on("click", ".fav_b", function(){
-            
+        
+        /*
         var fav_url = $(this)["0"].parentNode.childNodes[1].dataset.imagemOriginal;
         if (typeof fav_url == 'undefined') {
             fav_url = $(this)["0"].parentNode.childNodes[0].dataset.imagemOriginal;
@@ -244,12 +246,14 @@ $(document).ready(function(){
                 mensagem_sem_favoritos.innerText = "Click em uma das categorias para favoritar mais imagens!";
                 
                 $('.response').html(mensagem_sem_favoritos);
-            }
+            } 
         }
+       
 
         //imagens_favoritadas.add_url(fav_url);
         add_fav(fav_url);
         $('.contador_favoritos').html(fav().length);
+         */
 
     });
 
@@ -323,7 +327,8 @@ $(document).ready(function(){
             pagina: pagina
         },function(data){
             // show the response
-            $('.response').html(data);
+            var retorno = JSON.parse(data);
+            render_img(retorno.photos);
             
         }).fail(function(){
             // just in case posting your form failed
@@ -333,5 +338,63 @@ $(document).ready(function(){
         return false;
     }
 
+    var render_img = function(img){
+
+        var colunas = document.createElement('div');
+            colunas.setAttribute('class', 'response');
+
+        var column_1 = document.createElement('div');
+            column_1.setAttribute('class', 'column');
+
+        var column_2 = document.createElement('div');
+            column_2.setAttribute('class', 'column');
+
+        var column_3 = document.createElement('div');
+            column_3.setAttribute('class', 'column');
+        
+        for (let index = 0; index < img.length; index++) {
+
+            const element = img[index];
+            var render_image = document.createElement('img');
+            render_image.src = element.src.medium;
+
+            var galeria_img_pexel = document.createElement('div');
+                galeria_img_pexel.setAttribute('class','galeria_imagem_pexel_box');
+
+            var button            = document.createElement('button');  
+            button.setAttribute('class', 'galeria_acervo_botao');
+
+            var overlay           = document.createElement('div');
+            overlay.setAttribute('class', 'overlay');
+
+            var overlay_span      = document.createElement('span');
+            overlay_span.setAttribute('class', 'glyphicon glyphicon-zoom-in');
+
+            var fav_b             = document.createElement('div');
+            fav_b.setAttribute('class', 'fav_b');
+
+            var fav_b_span        = document.createElement('span');
+            fav_b_span.setAttribute('class', 'glyphicon glyphicon-heart');
+
+            $(overlay).append(overlay_span);
+            $(fav_b).append(fav_b_span);
+            $(overlay).append(fav_b);
+
+            $(galeria_img_pexel).append(render_image, button, overlay);
+
+            if (index <= 12) {
+                $(column_1).append(galeria_img_pexel);
+            }
+            if (index > 12 && index <= 25) {
+                $(column_2).append(galeria_img_pexel);
+            }
+            if (index > 25 && index <= 38) {
+                $(column_3).append(galeria_img_pexel);
+            }
+        }
+        $(colunas).append(column_1, column_2, column_3);
+        $('.response').html(colunas);  
+        }
+    
     return window.pagina_categoria = pagina_categoria;
 });

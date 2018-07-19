@@ -45,8 +45,12 @@ $(document).ready(function(){
         $(this).addClass("sub_categorias_over");
     });
 
+   
     //mostra botao da imagem
     $( ".galeria_response_img" ).on( "mouseover", ".galeria_imagem_pexel_box", function() {
+        var overlay = $(this)["0"].children[2];
+        $(overlay).show();
+         /*
         var UsarEsse = $(this)["0"].children[1];
         $(UsarEsse).show();
 
@@ -66,7 +70,8 @@ $(document).ready(function(){
             zoom_modal(imagem);
 
         });
-
+      
+       
         //quando clicado define a imagem escolhida
         $(UsarEsse).click(function(){
 
@@ -79,13 +84,22 @@ $(document).ready(function(){
             window.location.assign("https://instaarts.com/produto/quadro-personalizado-iap/?img="+data_imagem_original);
 
         });
+        */
 
     });
+
+    
+
     $( ".galeria_response_img" ).on( "mouseout", ".galeria_imagem_pexel_box", function() {
+        var overlay = $(this)["0"].children[2];
+        $(overlay).hide();
+        /*
         $(".galeria_acervo_botao").hide();
         $(".overlay").hide();
         $(".fav_b").hide();
+        */
     });
+  
 
     $(".categorias_menu_mobile").click(function(){
         $(".galeria_categoria").show();
@@ -98,6 +112,7 @@ $(document).ready(function(){
         $(".galeria_categoria").hide();
     });
 
+    
 //deixa imagem em tela cheia
     function zoom_modal(imagem){
         // Get the modal
