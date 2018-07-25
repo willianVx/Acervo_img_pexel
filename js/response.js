@@ -200,32 +200,40 @@ $(document).ready(function(){
     $('.contador_favoritos').html(fav().length);
 
     //imagens_favoritadas.set_indice_controle();
-    //imagens_favoritadas.atualiza_url_imagens();
 
     $('.contador_favoritos').html(fav().length);
 
     $(".galeria_response_img").on("mouseover", ".galeria_imagem_pexel_box", function(){
 
-        var dataset_imagem = $(this)["0"].childNodes[1].dataset.imagemOriginal;
-        
-
-        if (typeof dataset_imagem == 'undefined') {
-            dataset_imagem = $(this)["0"].childNodes[0].dataset.imagemOriginal;
-        }
-
+        var dataset_imagem = $(this)["0"].children["0"].dataset.imagemOriginal;
         for (let index = 0; index < fav().length; index++) {
             const element = fav()[index];
 
             if (element[1] == dataset_imagem) {
-                $(this)["0"].children[3].style = "color: rgb(71,175,88);";
+                $(this)["0"].children[1].children[1].style = "color: rgb(71,175,88);";
             }
 
         }
-
+       
     }); 
 
     //define ação para botão de favoritar 
     $(".galeria_response_img").on("click", ".fav_b", function(){
+        var fav_url = $(this)["0"].parentElement.parentElement.children["0"].dataset.imagemOriginal;
+
+        add_fav(fav_url);
+        $('.contador_favoritos').html(fav().length);
+
+        if (aba_atual) {
+            $(this)["0"].parentElement.parentElement.style = "display: none;";
+            if (fav().length == 0) {
+                var mensagem_sem_favoritos = document.createElement("div");
+                mensagem_sem_favoritos.setAttribute("class", "jumbotron");
+                mensagem_sem_favoritos.innerText = "Click em uma das categorias para favoritar mais imagens!";
+                
+                $('.response').html(mensagem_sem_favoritos);
+            } 
+        }
         
         /*
         var fav_url = $(this)["0"].parentNode.childNodes[1].dataset.imagemOriginal;
@@ -276,46 +284,7 @@ $(document).ready(function(){
             $('.response').html(mensagem_sem_favoritos);
 
         }
-
-        for (let index = 0; index < fav().length; index++) {
-
-            const element  = fav()[index];
-
-            var imagem_box = document.createElement("div");
-            var img        = document.createElement("img");
-            var button     = document.createElement("button");
-            var zoom       = document.createElement("div");
-            var zoom_span  = document.createElement("span");
-            var fav_b      = document.createElement("div");
-            var fav_b_icon = document.createElement("div");
-
-            imagem_box.setAttribute("class", "col-lg-2 galeria_imagem_pexel_box");
-
-            img.setAttribute("class", "galeria_imagem_pexel");
-            img.setAttribute("alt", "Imagem do Acervo");
-            img.setAttribute("data-imagem", "imagem" + index);
-            img.setAttribute("data-imagem-original", element[1]);
-            img.setAttribute("src", element[1]);
-
-            button.setAttribute("class", "galeria_acervo_botao");
-            button.setAttribute("type", "button");
-            button.setAttribute("data-botao", "botao"+index);
-            button.innerText = "Usar imagem";
-
-            zoom.setAttribute("class", "overlay");
-            zoom_span.setAttribute("class", "glyphicon glyphicon-zoom-in");
-            zoom.append(zoom_span);
-
-            fav_b.setAttribute("class", "fav_b");
-            fav_b_icon.setAttribute("class", "glyphicon glyphicon-heart");
-            fav_b.append(fav_b_icon);
-
-            imagem_box.append(img, button, zoom, fav_b);
-
-            $('.response').append(imagem_box);
-
-        }
-
+        render_img(fav());
     }
 
     //envia dados para o servidor e retorna imagens de acordo com a categoria e pagina 
@@ -339,7 +308,7 @@ $(document).ready(function(){
     }
 
     var render_img = function(img){
-
+        
         var colunas = document.createElement('div');
             colunas.setAttribute('class', 'response');
 
@@ -356,13 +325,21 @@ $(document).ready(function(){
 
             const element = img[index];
             var render_image = document.createElement('img');
-            render_image.src = element.src.medium;
+
+            if (typeof element.src == 'undefined' ) {
+                render_image.src = element[1];
+                render_image.dataset.imagemOriginal = element[1];
+            }else{
+                render_image.src = element.src.medium;
+                render_image.dataset.imagemOriginal = element.src.original;
+            }
 
             var galeria_img_pexel = document.createElement('div');
                 galeria_img_pexel.setAttribute('class','galeria_imagem_pexel_box');
 
             var button            = document.createElement('button');  
             button.setAttribute('class', 'galeria_acervo_botao');
+            button.innerText = "Usar imagem";
 
             var overlay           = document.createElement('div');
             overlay.setAttribute('class', 'overlay');
@@ -379,8 +356,9 @@ $(document).ready(function(){
             $(overlay).append(overlay_span);
             $(fav_b).append(fav_b_span);
             $(overlay).append(fav_b);
+            $(overlay).append(button);
 
-            $(galeria_img_pexel).append(render_image, button, overlay);
+            $(galeria_img_pexel).append(render_image, overlay);
 
             if (index <= 12) {
                 $(column_1).append(galeria_img_pexel);
@@ -394,7 +372,7 @@ $(document).ready(function(){
         }
         $(colunas).append(column_1, column_2, column_3);
         $('.response').html(colunas);  
-        }
+    }
     
     return window.pagina_categoria = pagina_categoria;
 });

@@ -1,7 +1,7 @@
 <?php
     function galeria_categorias(){
         ?>
-            <div class="galeria_categoria">
+            <div id = "galeria_categoria" class="galeria_categoria">
                 <span class="glyphicon glyphicon-remove"></span>
                 <div class="galeria_categoria_titulo"><h3>Categorias</h3></div>
                 <hr>

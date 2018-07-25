@@ -54,7 +54,7 @@
                         
                         <nav class="sub_categorias">Sub categorias:</nav>
 
-                        <div class="aba_favoritos">
+                        <div id="aba_favoritos" class="aba_favoritos">
                             <span class="glyphicon glyphicon-heart"></span>
                             <span class="contador_favoritos">0</span>
                         </div>
@@ -108,7 +108,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/response.js"></script>
     <script src="js/efeitos.js"></script>
-    <script src="js/cookie_fav_manager.js"></script>
     <script src="js/webstorage_fav_manager.js"></script>
 
 </html>

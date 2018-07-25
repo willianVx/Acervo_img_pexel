@@ -45,61 +45,29 @@ $(document).ready(function(){
         $(this).addClass("sub_categorias_over");
     });
 
-   
     //mostra botao da imagem
     $( ".galeria_response_img" ).on( "mouseover", ".galeria_imagem_pexel_box", function() {
-        var overlay = $(this)["0"].children[2];
+        var overlay = $(this)["0"].children[1];
         $(overlay).show();
-         /*
-        var UsarEsse = $(this)["0"].children[1];
-        $(UsarEsse).show();
 
-        var zoom = $(this)["0"].children[2];
-        $(zoom).show();
+        var zoom = $(overlay)["0"].children["0"];
 
-        var fav = $(this)["0"].children[3];
-        $(fav).show();
-
+        imagem_original = $(overlay)["0"].parentElement.childNodes["0"].dataset.imagemOriginal;
         $(zoom).click(function(){
-            
-            var imagem = $(this)["0"].parentElement.childNodes[1].dataset.imagemOriginal;
-
-            if (typeof imagem == 'undefined') {
-                imagem = $(this)["0"].parentElement.childNodes[0].dataset.imagemOriginal;
-            }
-            zoom_modal(imagem);
-
+            zoom_modal(imagem_original);
         });
-      
-       
-        //quando clicado define a imagem escolhida
-        $(UsarEsse).click(function(){
+        var usar_imagem = $(overlay)["0"].children[2];
 
-            var data_imagem = $(this)["0"].parentElement.childNodes[1].dataset.imagem;
-            var data_imagem_original = $(this)["0"].parentElement.childNodes[1].dataset.imagemOriginal;
-            
-            if (typeof data_imagem_original == 'undefined') {
-                data_imagem_original = $(this)["0"].parentElement.childNodes["0"].dataset.imagemOriginal;
-            }
-            window.location.assign("https://instaarts.com/produto/quadro-personalizado-iap/?img="+data_imagem_original);
-
+        $(usar_imagem).click(function(){
+            window.location.assign("https://instaarts.com/produto/quadro-personalizado-iap/?img="+imagem_original);
         });
-        */
 
     });
-
-    
 
     $( ".galeria_response_img" ).on( "mouseout", ".galeria_imagem_pexel_box", function() {
-        var overlay = $(this)["0"].children[2];
+        var overlay = $(this)["0"].children[1];
         $(overlay).hide();
-        /*
-        $(".galeria_acervo_botao").hide();
-        $(".overlay").hide();
-        $(".fav_b").hide();
-        */
     });
-  
 
     $(".categorias_menu_mobile").click(function(){
         $(".galeria_categoria").show();
@@ -111,7 +79,6 @@ $(document).ready(function(){
     $(".glyphicon-remove").click(function(){
         $(".galeria_categoria").hide();
     });
-
     
 //deixa imagem em tela cheia
     function zoom_modal(imagem){
@@ -139,5 +106,29 @@ $(document).ready(function(){
         }
         
     }
+    
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {sticky_scroll()};
 
+    // Get the sidebar
+    var galeria_categoria = document.getElementById("galeria_categoria");
+    var aba_favoritos     = document.getElementById("aba_favoritos");
+    
+    // Get the offset position of the navbar
+    var sticky = galeria_categoria.offsetTop;
+    
+    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function sticky_scroll() {
+        if (window.innerWidth <= 767) {
+            return;
+        }
+        if (window.pageYOffset > sticky) {
+            galeria_categoria.classList.add("sticky");
+            aba_favoritos.classList.add("sticky");
+        } else {
+            galeria_categoria.classList.remove("sticky");
+            aba_favoritos.classList.remove("sticky");
+        }
+    }
+    
 });
