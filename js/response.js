@@ -234,35 +234,6 @@ $(document).ready(function(){
                 $('.response').html(mensagem_sem_favoritos);
             } 
         }
-        
-        /*
-        var fav_url = $(this)["0"].parentNode.childNodes[1].dataset.imagemOriginal;
-        if (typeof fav_url == 'undefined') {
-            fav_url = $(this)["0"].parentNode.childNodes[0].dataset.imagemOriginal;
-        }
-
-        if ($(this)["0"].style.color != "rgb(71, 175, 88)") {
-            this.style = "color: rgb(71,175,88);";
-        }else{ 
-            this.style = "color: rgb(255,255,255);";
-        }
-        if (aba_atual) {
-            $(this)["0"].parentElement.style = "display: none;";
-            if (fav().length == 1) {
-                var mensagem_sem_favoritos = document.createElement("div");
-                mensagem_sem_favoritos.setAttribute("class", "jumbotron");
-                mensagem_sem_favoritos.innerText = "Click em uma das categorias para favoritar mais imagens!";
-                
-                $('.response').html(mensagem_sem_favoritos);
-            } 
-        }
-       
-
-        //imagens_favoritadas.add_url(fav_url);
-        add_fav(fav_url);
-        $('.contador_favoritos').html(fav().length);
-         */
-
     });
 
     //exibe aba favoritos

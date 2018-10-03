@@ -1,21 +1,10 @@
 //define funcao para imagem escolhida
 function imagem_do_acervo(data_imagem, data_imagem_original){
-
     this.data_imagem = data_imagem;
     this.data_imagem_original = data_imagem_original;
-
 }
 
 $(document).ready(function(){
-    
-    //muda a cor da categoria quando o mouse está sobre ela
-    $(".galeria").mouseover(function(){
-        $(this).addClass("galeria_mouseover");
-    });
-    //retorna para cor padrão quando se retira o mouse 
-    $(".galeria").mouseout(function(){
-        $(this).removeClass("galeria_mouseover");
-    });
     //aumenta o tamanho da fonte da categoria clicada       
     $(".galeria").click(function(){
 
@@ -27,16 +16,6 @@ $(document).ready(function(){
         $("#page_1").addClass('botao_ativado');
         
     });
-
-    //ação para quando uma subcategoria é selecionada
-    $(".sub_categorias").on("mouseover", ".sub_lista", function(){
-        $(this).css({"color":"white", "background-color": "rgb(71,175,88)"});
-    });
-
-    $(".sub_categorias").on("mouseout", ".sub_lista", function(){
-        $(this).css({"color":"rgb(71,175,88)", "background-color": "white"});
-    });
-
     $(".sub_categorias").on("click", ".sub_lista", function(){
         
         $(".sub_lista").removeClass("sub_categorias_over");
@@ -44,7 +23,6 @@ $(document).ready(function(){
         $("#page_1").addClass('botao_ativado');
         $(this).addClass("sub_categorias_over");
     });
-
     //mostra botao da imagem
     $( ".galeria_response_img" ).on( "mouseover", ".galeria_imagem_pexel_box", function() {
         var overlay = $(this)["0"].children[1];
@@ -107,28 +85,5 @@ $(document).ready(function(){
         
     }
     
-    // When the user scrolls the page, execute myFunction 
-    window.onscroll = function() {sticky_scroll()};
-
-    // Get the sidebar
-    var galeria_categoria = document.getElementById("galeria_categoria");
-    var aba_favoritos     = document.getElementById("aba_favoritos");
-    
-    // Get the offset position of the navbar
-    var sticky = galeria_categoria.offsetTop;
-    
-    // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-    function sticky_scroll() {
-        if (window.innerWidth <= 767) {
-            return;
-        }
-        if (window.pageYOffset > sticky) {
-            galeria_categoria.classList.add("sticky");
-            aba_favoritos.classList.add("sticky");
-        } else {
-            galeria_categoria.classList.remove("sticky");
-            aba_favoritos.classList.remove("sticky");
-        }
-    }
     
 });

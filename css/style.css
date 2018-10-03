@@ -10,6 +10,12 @@
     position: relative;
     top: 50px;
 }
+.galeria{
+    transition: 0.3s;
+}
+.galeria:hover{
+    font-size: 150%;
+}
 .galeria_categoria{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -35,9 +41,6 @@
     text-decoration: none;
     color: #ffffff;
 }
-.galeria_mouseover{
-    font-size: 150%;
-}   
 .galeria_click{
     font-size: 200%;
 }
@@ -205,7 +208,6 @@
 }
 
 .sub_categorias span{
-
     padding: 5px;
     background-color: rgb(255, 255, 255);
     color: rgb(71,175,88);
@@ -213,7 +215,11 @@
     border: 1px solid rgb(71,175,88);
     border-radius: 6px;
     cursor: pointer;
-
+    transition: 0.3s;
+}
+.sub_categorias span:hover{
+    color:white;
+    background-color: rgb(71,175,88);
 }
 .aba_favoritos{
 

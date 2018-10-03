@@ -1,9 +1,6 @@
 <?php 
-                    require "galeria_fotos.php";
-                    require "categorias.php";
-                    //require "modal_comprar.php";
-                    //require "calculadoraProdutosInsta/main.php";
-                    //require "TamanhosProporcionais/imagemProporcional.php";
+    require "galeria_fotos.php";
+    require "categorias.php";
  ?>
  
 <html>
