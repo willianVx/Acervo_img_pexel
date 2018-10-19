@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="icon" type="imagem/png" href="https://instaarts.com/wp-content/uploads/2018/03/logo-instaarts-76.png" />
+    <link rel="icon" href="https://instaarts.com/wp-content/uploads/2018/10/logo-instaarts-144-px.png" type="image/x-icon"/>
     </head>
     <body>
 
