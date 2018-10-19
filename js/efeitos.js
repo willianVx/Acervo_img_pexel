@@ -37,7 +37,7 @@ $(document).ready(function(){
         var usar_imagem = $(overlay)["0"].children[2];
 
         $(usar_imagem).click(function(){
-            window.location.assign("https://instaarts.com/produto/quadro-personalizado-iap/?img="+imagem_original);
+            window.location.assign("https://instaarts.com/product/quadro-personalizado-instaarts/?img="+imagem_original);
         });
 
     });
@@ -72,7 +72,7 @@ $(document).ready(function(){
         
         //direciona para quadro personalizado
         $("#botao_usar_imagem_modal").click(function(){
-            window.location.assign("https://instaarts.com/produto/quadro-personalizado-iap/?img="+img);
+            window.location.assign("https://instaarts.com/product/quadro-personalizado-instaarts/?img="+img);
         });
 
         // Get the <span> element that closes the modal
