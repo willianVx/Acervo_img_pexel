@@ -7,7 +7,7 @@ $(document).ready(function(){
     //inicia a página com imagens pexel
     sendData("painting colors art", 1);
 
-    //verica se a aba atual é a de favoritos 
+    //verifica se a aba atual é a de favoritos 
     var aba_atual = false;
 
     //lista de subcategorias
@@ -48,6 +48,9 @@ $(document).ready(function(){
             ["Salada", "salad"],
             ["Macarrão", "pasta"],
             ["Vinho", "wine"]
+        ],
+        abstrato: [
+            ["Vermelho", "red"]
         ]
 
     }
@@ -110,6 +113,10 @@ $(document).ready(function(){
             if(this.categoria_id.includes("food")){
                 exibe_sub_categoria(lista_sub_categoria.comida);
             }
+            if(this.categoria_id.includes("abstract")){
+                exibe_sub_categoria(lista_sub_categoria.abstrato);
+            }
+            
         }
 
     }
